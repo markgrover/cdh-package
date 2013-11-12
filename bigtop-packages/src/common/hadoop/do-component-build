@@ -114,10 +114,7 @@ mv -f hadoop-mapreduce1-project/build/hadoop-mr1/hadoop-client.list build/hadoop
 mv -f hadoop-mapreduce1-project/build/c++-examples build/hadoop-${FULL_VERSION}/examples-mapreduce1
 cp -r hadoop-mapreduce1-project/build/c++/* build/hadoop-${FULL_VERSION}/examples-mapreduce1
 
-BIN_EXCLUDE="--exclude=*/target/**            \
-             --exclude=*/examples/bin/*             \
-             --exclude=*/bin/container-executor     \
-             --exclude=*/bin/test-container-executor"
+BIN_EXCLUDE="--exclude=*/target"
 (cd build && tar $BIN_EXCLUDE -czf hadoop-${FULL_VERSION}.tar.gz hadoop-${FULL_VERSION})
 
 # Copy fuse output to the build directory
